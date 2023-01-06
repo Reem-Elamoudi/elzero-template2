@@ -1,0 +1,1038 @@
+
+/* start global value */
+*,
+*::before,
+*::after{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+html{
+scroll-behavior: smooth;
+}
+:root{
+--home-color: rgb(15 116 143 / 70%);
+--main-color: #19c8fa;
+--white-color: rgb(255 255 255);
+}
+body{
+    font-family: "Open Sans", sans-serif;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+i{
+    font-size: 22px;
+    color: var(--white-color);
+}
+i:hover,
+input{
+    cursor: pointer;
+}
+::selection{
+background-color: black;
+color: var(--main-color);
+}
+/* small screen */
+@media (min-width: 768px){
+    .continer{
+        width: 750px;
+    }
+}
+/* medium screen */
+@media (min-width: 992px){
+.continer{
+    width: 970px;
+    }
+}
+/* large screen */
+@media (min-width: 1200px){
+.continer{
+    width: 1170px;
+    }
+}
+/* end global value */
+
+/* start header  */
+header{
+    color: var(--white-color);
+position: absolute;
+width: 100%;
+z-index: 3;
+} 
+header .continer{
+    padding-inline: 15px;
+    display: flex;
+    margin-inline: auto;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; 
+} 
+header .continer::after{
+    content: '';
+    background-color: var(--white-color);
+    width: calc(100% - 30px);
+    height: 1px;
+    position: absolute;
+    bottom: 2px;
+    left: 15px;
+    z-index: 1;
+}
+header .logo{
+    height: 40px;
+}
+header .list{
+    display: flex;
+    flex: 1;
+    justify-content: end;
+    align-items: center;
+}
+header .list ul{
+    display: flex;
+}
+header .list .bar{
+    display: none;
+}
+@media (max-width: 768px){
+    header .list .bar{
+        display: block;
+    }
+    header .list ul{
+        display: none; 
+        
+    }
+    header .bar:hover + ul{
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(0 0 0 / 50%);
+        position: absolute;
+        left: 0px;
+        top: 100%;
+        width: 100vw;
+    }
+    .list ul a{
+        padding: 15px !important;
+        width: 100% !important;
+    }
+}
+header .list ul li a{
+    color: var(--white-color);
+    display: inline-block;
+    padding: 40px 10px;
+    font-size: 14px;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+header .list ul li .a-color,
+header .list ul li a:hover{
+    color: var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+position: relative;
+z-index: 2;
+}
+header .list .search i{
+    margin-block: 40px;
+    padding-left: 20px;
+    margin-left: 40px;
+    border-left: 1px solid var(--white-color);
+}
+/* end header */
+/* start home */
+.home{
+    width: 100%;
+    padding-block: 10rem;
+    background: url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/landing.jpg) no-repeat  left top;
+    background-size: cover;
+    position: relative;
+    z-index: 1; 
+    display:flex;
+    align-items: center; 
+    height: 100vh;
+}
+@media (max-height: 100vh){
+.home{
+    padding-block: 10rem;
+}
+}
+.home::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .6);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+}
+.home .text{
+    background-color: var(--home-color);
+    width: 50%;
+    padding: 1.5rem;
+    height: fit-content;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    box-shadow: 11px 9px 20px #0000000d;
+}
+.home .text .text-cont{
+    max-width: 400px;
+    color: var(--white-color);
+    line-height: 1.5;
+    margin-left: 10px;    
+}
+@media (max-width: 768px){
+    .home .text{
+        width: 100%;
+    }
+    .home .text .text-cont{
+        max-width: 100%;
+}
+}
+.home .text-cont h2{
+    margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: 100;
+} 
+.arrow{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--white-color);
+    padding-inline: 20px;
+}
+.arrow i{
+    font-size: 2em;
+}
+@media (max-width: 900px){
+    .arrow i{
+        display: none;
+    }
+}
+.scrol{
+    display: flex;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+.home .scrol li{
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--white-color);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.home .scrol li:nth-child(2){
+    margin-inline: 10px;
+    background-color: var(--main-color);
+    border: none
+}
+/* end home */
+
+/* start service */
+.services{
+padding-block: 100px;
+}
+.services .continer{
+margin:auto;
+padding-inline: 1rem; 
+}
+.services .title{
+text-align: center;
+}
+.heading-section{
+font-weight: normal;
+font-size: 2.3em;
+text-align: center;
+position: relative;
+}
+.heading-section::after{
+content:'';
+width: 8rem;
+height: 1.5px;
+background-color: black;
+position: absolute;
+top: calc(100% + 1.3rem);
+left: 50%;
+transform: translatex(-50%);
+}
+.heading-section::before{
+content:'';
+width: 1rem;
+height: 1rem;
+background: white;
+border-radius: 50%;
+border: 2px solid black;
+position: absolute;
+top: calc(100% + (1.3rem - .5rem));
+left: 50%;
+transform: translatex(-50%);
+z-index: 2;
+}
+.heading-section+p{
+margin-block: 3.3rem 2rem;
+max-width: 31rem;
+margin-inline: auto;
+padding-inline: 1em;
+text-align: center;
+line-height: 1.6;
+opacity: .65;
+}
+.services .servic{
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+column-gap:1rem;
+}
+.servic .serv{
+display: flex;
+margin-top: 2rem;
+}
+.servic .serv i{
+flex-basis: 3.5rem;
+color: black;
+font-size: 2.5em;
+margin-right: 2rem;
+}
+@media (max-width: 992px){
+.servic .serv{
+flex-direction: column;
+    text-align: center;
+}
+.servic .serv i{
+    margin: 0px;
+}
+}
+.servic .serv .serv-cont h3{
+margin-bottom: 1rem;
+color: var(--main-color);
+
+}
+.servic .serv .serv-cont p{
+line-height: 1.6;
+opacity: .6;
+}
+/* end service */ 
+
+/* start design */
+section.design{
+height: 37.5rem;
+padding-block: 5em;
+background: url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/design-features.jpg) no-repeat center;
+background-size: cover;
+overflow: hidden;
+display: flex;
+position: relative;
+z-index: 1;
+}
+section.design::after{
+content:'';
+width: 100%;
+height: 100%;
+position: absolute;
+top: 0px;
+left: 0px;
+z-index: -1;
+background-color: rgba(0, 0, 0, .5);
+}
+.design .continer{
+display: flex;
+justify-content: end;
+align-items: center;
+width: 100%;
+}
+.design .continer .text{
+width: 50%;
+height: fit-content;
+background-color: var(--home-color);
+padding: 2.5em;
+color: white;
+}
+.design .continer img{
+margin-right: 7rem;
+margin-left: 1rem;
+position: relative;
+bottom: -200px;
+}
+@media (max-width: 845px){
+.design .continer img{
+    display: none;
+}
+.design .continer .text{
+    width: 100%;
+}
+}
+.design .continer .text h2{
+font-weight: 100;
+margin-bottom: 3rem;
+}
+.design .continer .text .design{
+margin-top: 1.2rem;
+}
+.design .continer .text span{
+margin-left: 1rem;
+}
+.design .continer .text i{
+font-size: .95em;
+}
+/* end design */
+
+/* start prtfolio */
+.prtfolio{
+padding-block: 100px;
+}
+.prtfolio ul{
+display: flex;
+justify-content: center;
+padding-inline: 1em;
+}
+.prtfolio ul li{
+padding: .8em;
+margin-block: 3em;
+}
+.prtfolio ul li.color{
+background-color: var(--main-color);
+color: white;
+}
+.prtfolio .continer{
+width: 100%;
+}
+.prtfolio .continer{
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.prtfolio .continer .poto{
+max-width: 100%;
+position: relative;
+overflow: hidden;
+}
+.prtfolio .continer .poto img{
+max-width:100%;
+transition: .5s;
+}
+.prtfolio .continer .poto:hover img{
+transform: scale(1.2) rotate(5deg);
+cursor: pointer;
+}
+.prtfolio .continer .poto .hover-div{
+width: 100%;
+height: 35%;
+position: absolute;
+left: 0px;
+background-color: white;
+padding: 1em;
+bottom: -100%;
+transition: .3s;
+}
+.prtfolio .continer .poto:hover .hover-div{
+cursor: pointer;
+bottom: 0;
+}
+.hover-div .color-span{
+color: var(--main-color);
+display: block;
+margin-top: .6rem;
+}
+.prtfolio button{
+padding: 1em 2em;
+margin-left: 50%;
+margin-top: 4rem;
+transform: translatex(-50%);
+border: none;
+background-color: var(--main-color);
+color: white;
+}
+button:hover{
+cursor: pointer;
+}
+/* end prtfolio */
+
+/* start video */
+.video{
+position: relative;
+}
+video{
+width: 100%;
+}
+.video-text{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    background-color: var(--home-color);
+    padding: 5em;
+    color: white;
+    transform: translatey(-50%);
+    -webkit-transform: translatey(-50%);
+    -moz-transform: translatey(-50%);
+    -ms-transform: translatey(-50%);
+    -o-transform: translatey(-50%);
+}
+.video-text p{
+font-size: 1.1em;
+margin-bottom: 1rem;
+}
+.video-text .small-text{
+    margin-bottom: 1rem;
+}
+.video-text button{
+    padding: .7em 1em;
+    background-color: black;
+    color: white;
+    letter-spacing: 1px;
+}
+/* end video */
+
+/* start about */
+    section.about{
+    padding-top: 100px;
+    overflow: hidden;
+}
+.about .continer{
+    margin: auto;
+    padding-inline: 1em;
+    text-align: center;
+}
+.about img{
+    max-width: 100%;
+    margin-top: 1.5rem;
+    margin-bottom: -150px;
+}
+@media (max-width: 600px){
+.about img{
+    margin-bottom: -80px;
+}
+}
+/* end about */
+
+/* start number */
+.number{
+padding-block: 100px;
+background: url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/stats.png) no-repeat center;
+background-size: cover;
+position: relative;
+z-index: 1;
+}
+.number::after{
+content: '';
+width: 100%;
+height: 100%;
+position: absolute;
+top: 0px;
+left: 0px;
+background-color: rgba(0, 0, 0, .5);
+z-index: -1;
+}
+.number .continer{
+margin: auto;
+padding-inline: 1em;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+color: white;
+}
+.number .num{
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 3em;
+background-color: var(--home-color);
+}
+.num .icon{
+width: 40px;
+height: 40px;
+background-color: black;
+border-radius: 50%;
+display: grid;
+place-content: center;
+}
+.num .icon i,
+.num span:last-of-type{
+font-size: .95em;
+}
+.num span:first-of-type{
+font-size: 3em;
+font-weight: bold;
+margin-block: 1rem;
+}
+/* end number */
+
+/* start skils */
+.skills{
+padding-block: 100px;
+}
+.skills .continer{
+padding-inline: 1em;
+margin: auto; 
+text-align: center;
+}
+.col .small-img{
+margin-top: 4rem;
+}
+@media (min-width: 1000px){
+.skills .continer{
+    display: flex;
+    text-align: initial;
+}
+}
+.col > p{
+text-align: center;
+}
+.col > p:nth-of-type(2){
+margin-block: 1.5rem;
+opacity: .6;
+line-height: 1.6;
+}
+.col .img{
+display: flex;
+align-items: center;
+margin-block: 2rem;
+}
+.col img{
+width: 100px;
+border-radius: 50%;
+}
+.col .text{
+margin-left: 1rem;
+position: relative;
+padding: 1em;
+border-bottom: 1px solid #dddddd;
+}
+@media (max-width: 600px){
+.col .img{
+    flex-direction: column;
+}
+}
+.col .img p{
+line-height: 1.6;
+margin-bottom: 2.5rem;
+}
+.col .img span{
+font-size: .9em;
+opacity: .6;
+position: absolute;
+right: 10px;
+bottom: 10px;
+}
+.col .pop{
+display: flex;
+margin: auto;
+justify-content: center;
+position: relative;
+top: 2rem;
+}
+.col .pop span{
+width: 1rem;
+height: 1rem;
+border-radius: 50%;
+border: 1px solid gray;
+margin-left: .5rem;
+}
+.col .pop span.color{
+background-color: var(--main-color);
+border-color: var(--main-color);
+}
+.skills .col:nth-of-type(2){
+margin-left: 6rem;
+}
+@media (max-width: 1000px){
+.skills .col:nth-of-type(2){
+    margin: 0px;
+    margin-top: 3.5rem;
+}
+.col .pop{
+    top: .5rem;
+}
+}
+.col label{
+display: block;
+margin-top: 2rem;
+}
+label+.range{
+width: 100%;
+height: 1.6rem;
+display: block;
+background: #ededed;
+margin-top: 1rem;
+
+}
+.range span{
+display: block;
+width: 90%;
+height: 100%;
+position: relative;
+background-color: var(--main-color);
+
+}
+.range:nth-of-type(2) span{
+width: 85%;
+}
+.range:nth-of-type(3) span{
+width: 80%;
+}
+.range span::after{
+content:'90%';
+width: 40px;
+background: black;
+color: white;
+padding: 6px 0px;
+text-align: center;
+border-radius: 4px;
+position: absolute;
+bottom: calc(100% + 5px);
+right: -19px;
+font-size: 12px;
+}
+.range:nth-of-type(2) span::after{
+content: '85%';
+}
+.range:nth-of-type(3) span::after{
+content: '80%';
+}
+.range span::before{
+content:'';
+width: 0px;
+height: 0px;
+border: 6.5px solid;
+border-color: black transparent transparent transparent;
+position: absolute;
+top: -5px;
+right: -6px;
+}
+/* end skils */
+
+/* start slid */
+.slide{
+padding-block: 100px;
+background: url(	https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/quote.jpg) no-repeat center;
+background-size: cover;
+position: relative;
+z-index: 1;
+}
+.slide::after{
+content: '';
+width: 100%;
+height: 100%;
+position: absolute;
+top: 0px;
+left: 0px;
+background-color: rgba(0, 0, 0 ,.85);
+z-index: -1;
+}
+.slide .continer{
+padding-inline: 1em; 
+text-align: center;
+color: white;
+margin: auto;
+}
+.slide q{
+font-size: 30px;
+}
+.slide q::after,
+.slide q::before{
+content: \f10e;
+font-family: "Font Awesome 5 Free";
+}
+.slide q::before{
+content: \f10d;
+}
+.slide span{
+display: block;
+margin-top: 1.5rem;
+font-size: 15px;
+}
+/* end slid */
+
+/* start card */
+.pricing{
+padding-block: 100px;
+}
+.pricing .continer{
+padding-inline: 1em;
+margin: auto;
+}
+.pricing .cards{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+.pricing .cards .card{
+background-color: rgba(0, 0, 0, .02);
+text-align: center;
+margin-top: 5em; 
+}
+@media (max-width: 768px){
+.pricing .cards .card{
+    flex-basis: 80%;
+    margin-inline: auto;
+}
+}
+@media (min-width: 769px){
+.pricing .cards .card{
+    flex-basis: 45%;
+}
+}
+@media (min-width: 992px){
+.pricing .cards .card{
+    flex-basis: 23%;
+}
+}
+.pricing .cards .title-card{
+padding: 1.5em 0 1em;
+border-top: 1px solid var(--main-color);
+border-bottom: 1px solid var(--main-color);
+}
+.pricing .title-card span{
+margin-bottom: 1rem;
+display: block;
+}
+.pricing .title-card h2{
+font-size: 3em;
+}
+.title-card h2 sup,
+sub{
+font-size: .4em;
+font-weight: normal;
+margin-inline: .5rem;
+}
+.cards .card .feature-card{
+padding-block: .5em;
+border-bottom: 1px solid var(--main-color);
+}
+.cards .card .feature-card p{
+padding: 1em;
+position: relative;
+}
+.cards .card .feature-card p:not(p:last-child)::after{
+content: '';
+width: 50%;
+max-width: 150px;
+height: 1px;
+background-color: var(--main-color);
+position: absolute;
+bottom: 0px;
+left: 50%;
+transform: translatex(-50%);
+}
+.cards .card button{
+padding: 1em 2em;
+background-color: transparent;
+border: 1px solid var(--main-color);
+font-size: 1em;
+margin-top: 1.5rem;
+transition: .5s;
+}
+.cards .card button:hover{
+background-color: var(--main-color);
+color: white;
+}
+.after-card-p{
+text-align: center;
+margin-block: 4rem 2rem;
+}
+.fill-button{
+margin: auto;
+display: block;
+color: white;
+background-color: var(--main-color);
+border: none;
+padding: 1em 2em;
+border: 1px solid var(--main-color);
+font-size: 1.01em;
+position: relative;
+overflow: hidden;
+}
+/* end card */
+
+/* start email */
+.email{
+padding-block: 100px;
+background: url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/subscribe.jpg);
+position: relative;
+z-index: -1;
+}
+.email::after{
+content: '';
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, .6);
+position: absolute;
+top: 0px;
+left: 0px;
+z-index: 1;
+}
+.email .continer{
+position: relative;
+z-index: 2;
+display: flex;
+align-items: center;
+color: white;
+padding-inline: 1em;
+margin: auto;
+}
+.email .continer form{
+display: flex;
+max-width: 100%;
+margin-right: 4rem;
+position: relative;
+}
+@media (max-width: 992px){
+.email .continer{
+    flex-direction: column;
+}
+.email .continer form{
+    margin: 2rem auto;
+}
+}
+.email form input[type='email']{
+width: calc(100% - 130px);
+padding: 1.2em 1.2em 1.2em 4em;
+border: 1px solid white;
+background-color: transparent;
+border-right: none;
+caret-color: var(--main-color);
+}
+.email form input[type='submit']{
+width: 130px;
+border: 1px solid white;
+background-color: var(--main-color);
+color: white;
+border-left: none;
+}
+.email form input::placeholder{
+color: white;
+}
+.email i{
+position: absolute;
+top: 50%;
+transform: translatey(-50%);
+left: 1rem;
+}
+.email p{
+line-height: 1.8;
+}
+/* end email */
+
+/* start contact */
+.contact-us{
+padding-block: 100px;
+}
+.contact-us .continer{
+margin: 3rem auto 0px;
+padding-inline: 1em;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+.contact-us .continer form{
+flex-basis: 70%;
+display: flex;
+flex-direction: column;
+}
+@media (max-width: 768px){
+.contact-us .continer{
+    flex-direction: column-reverse;
+    text-align: center;
+}
+.contact-us .continer form{
+margin-top: 3rem;
+}
+}
+.contact-us .continer form input,
+textarea{
+padding: 1em;
+margin-bottom: 1rem;
+border: 1px solid rgba(0, 0, 0, 30%);
+caret-color: var(--main-color);
+}
+.contact-us .continer form input,
+textarea:focus{
+outline: none;
+}
+.contact-us form input[type='submit']{
+background-color: var(--main-color);
+width: fit-content;
+border: none;
+color: white;
+align-self: end;
+margin-bottom: 0px;
+}
+.contact-us .continer .contact-cont{
+flex-basis: 25%;
+}
+.contact-us .contact-cont .row:first-child{
+margin-bottom: 3rem;
+}
+.contact-us .contact-cont h3{
+font-weight: normal;
+margin-bottom: .5rem;
+}
+.contact-us .contact-cont p,
+.contact-us .contact-cont span{
+opacity: .6;
+line-height: 1.5;
+}
+@media (max-width: 768px){
+.contact-us .contact-cont span:nth-of-type(2){
+    margin-inline: .5em;
+}
+}
+/* end contact */
+
+/* start footer */
+footer{
+padding-block: 50px;
+text-align: center;
+background: url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/subscribe.jpg);
+position: relative;
+}
+footer::after{
+content: '';
+width: 100%;
+height: 100%;
+position: absolute;
+top: 0px;
+left: 0px;
+background-color: rgba(0, 0, 0, .5);
+}
+footer .continer{
+padding-inline: 1em;
+position: relative;
+color: white;
+margin-inline: auto;
+z-index: 1;
+}
+footer .logo{
+margin-bottom: 2rem;
+}
+footer h3{
+font-weight: normal;
+padding: .5em;
+margin-inline: auto;
+width: fit-content;
+font-size: 1.5em;
+border-bottom: 1px solid white;
+}
+footer i{
+font-size: 1em;
+padding:  1em .8em 2em;
+}
+footer p span{
+color: var(--main-color);
+font-weight: bold;
+
+}
